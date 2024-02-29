@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Sélection de Dossier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #87CEEB; /* Bleu ciel */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 600px;
+        }
+        .folder {
+            width: 280px;
+            height: 180px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .folder img {
+            width: 270px;
+            height: 68spx;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="folder" onclick="openFolder('Administration')">
+            <img src="\\IDF-PC-F9MVF13\Images\RIVAGROUP.png" alt="Administration">
+            <p>Administration</p>
+        </div>
+		<div class="folder" onclick="openFolder('RivaClim')">
+            <img src="\\IDF-PC-F9MVF13\Images\RIVACLIM.png" alt="RivaClim">
+            <p>RivaClim</p>
+		</div>
+	    <div class="folder" onclick="openFolder('RivaControls')">
+			<img src="\\IDF-PC-F9MVF13\Images\RIVACON.png" alt="RivaControls">
+            <p>RivaControls</p>
+        </div>
+        <div class="folder" onclick="openFolder('RivaTherm')">
+            <img src="\\IDF-PC-F9MVF13\Images\RIVATHERM.png" alt="RivaTherm">
+            <p>RivaTherm</p>
+        </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        function openFolder(folderName) {
+            if (folderName === 'Administration') {
+                window.location.href = `https://192-168-10-117.rivagroup.direct.quickconnect.to:5001/?launchApp=SYNO.SDS.Drive.Application#file_id=803129562501259273`;
+            } else if (folderName === 'RivaTherm') {
+                window.location.href = `https://192-168-10-117.rivagroup.direct.quickconnect.to:5001/drive/#file_id=803129515581677571`;
+            } else if (folderName === 'RivaControls') {
+                window.location.href = `https://192-168-10-117.rivagroup.direct.quickconnect.to:5001/drive/#file_id=803129535749988357`;
+            } else if (folderName === 'RivaClim') {
+                window.location.href = `https://192-168-10-117.rivagroup.direct.quickconnect.to:5001/drive/#file_id=803129549043834887`;
+            }
+        }
+    </script>
+</body>
+</html>
